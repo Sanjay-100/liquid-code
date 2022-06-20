@@ -1,0 +1,21 @@
+  {%- comment -%} define the collection list{%- endcomment -%}
+       {% assign internal_doors = "internal-oak-doors, custom-made-doors" | split:','  %}
+       
+       {% for id_att in internal_doors %}
+       {% assign internal_doors_ac = id_att  %}
+         {%- if collection.handle ==  internal_doors_ac -%}
+          
+            {{ divider }}
+            <a class="breadcrumb-active mc" href="{{ routes.collections_url }}/internal-doors" itemprop="item"><span itemprop="name"> internal doors</span></a>
+              {% if show_collection_listing_link %}
+                <meta itemprop="position" content="3" />
+              {% else %}
+                <meta itemprop="position" content="2" />
+              {% endif %}
+         {% endif %}
+       {% endfor %}
+
+        
+     
+        
+ {%- comment -%} end for main cat level {%- endcomment -%}
